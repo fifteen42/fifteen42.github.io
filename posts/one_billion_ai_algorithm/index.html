@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 价值一个亿的人工智能算法（Rust 版） | Fat Blog</title>
+  <meta name="description" content="想到啥写啥，内容主要包括区块链，科幻，美食等。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="价值一个亿的人工智能算法（Rust 版）" />
+<meta property="og:description" content="#![allow(unused)] use std::io::stdin; fn main() { loop { let mut s = String::new(); stdin().read_line(&amp;mut s) .expect(&#34;Failed to read line.&#34;); s = s.replace(&#34;吗&#34;, &#34;&#34;); s = s.replace(&#34;我&#34;, &#34;你&#34;); s = s.replace(&#34;?&#34;, &#34;!&#34;); println!(&#34;艾瑞斯：{}&#34;, s); } } 使用 你好 艾瑞斯：你好 今天天气好吗 艾瑞斯：今天天气好 我是世界上最美的人吗 艾瑞斯：你是世界上最美的人 天呐,我竟然是猪 艾瑞斯：天呐,你竟然是猪 吃饭? 艾瑞斯：吃饭! 来源 https://github.com/ruanyf/weekly/issues/158
+ Just for fun 🤣" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tingfei.space/posts/one_billion_ai_algorithm/" />
+<meta property="article:published_time" content="2021-03-05T17:47:53+08:00" />
+<meta property="article:modified_time" content="2021-03-05T17:47:53+08:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="价值一个亿的人工智能算法（Rust 版）"/>
+<meta name="twitter:description" content="#![allow(unused)] use std::io::stdin; fn main() { loop { let mut s = String::new(); stdin().read_line(&amp;mut s) .expect(&#34;Failed to read line.&#34;); s = s.replace(&#34;吗&#34;, &#34;&#34;); s = s.replace(&#34;我&#34;, &#34;你&#34;); s = s.replace(&#34;?&#34;, &#34;!&#34;); println!(&#34;艾瑞斯：{}&#34;, s); } } 使用 你好 艾瑞斯：你好 今天天气好吗 艾瑞斯：今天天气好 我是世界上最美的人吗 艾瑞斯：你是世界上最美的人 天呐,我竟然是猪 艾瑞斯：天呐,你竟然是猪 吃饭? 艾瑞斯：吃饭! 来源 https://github.com/ruanyf/weekly/issues/158
+ Just for fun 🤣"/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://tingfei.space/css/style-white.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://tingfei.space/images/favicon.ico" />
+
+  
+  
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-WLHHMZN550', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://tingfei.space/posts/digital_collections/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://tingfei.space/posts/nns_summary/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&text=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&is_video=false&description=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89&body=Check out this article: https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&name=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89&description=%23%21%5ballow%28unused%29%5d%20use%20std%3a%3aio%3a%3astdin%3b%20fn%20main%28%29%20%7b%20loop%20%7b%20let%20mut%20s%20%3d%20String%3a%3anew%28%29%3b%20stdin%28%29.read_line%28%26amp%3bmut%20s%29%20.expect%28%26%2334%3bFailed%20to%20read%20line.%26%2334%3b%29%3b%20s%20%3d%20s.replace%28%26%2334%3b%e5%90%97%26%2334%3b%2c%20%26%2334%3b%26%2334%3b%29%3b%20s%20%3d%20s.replace%28%26%2334%3b%e6%88%91%26%2334%3b%2c%20%26%2334%3b%e4%bd%a0%26%2334%3b%29%3b%20s%20%3d%20s.replace%28%26%2334%3b%3f%26%2334%3b%2c%20%26%2334%3b%21%26%2334%3b%29%3b%20println%21%28%26%2334%3b%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%7b%7d%26%2334%3b%2c%20s%29%3b%20%7d%20%7d%20%e4%bd%bf%e7%94%a8%20%e4%bd%a0%e5%a5%bd%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e4%bd%a0%e5%a5%bd%20%e4%bb%8a%e5%a4%a9%e5%a4%a9%e6%b0%94%e5%a5%bd%e5%90%97%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e4%bb%8a%e5%a4%a9%e5%a4%a9%e6%b0%94%e5%a5%bd%20%e6%88%91%e6%98%af%e4%b8%96%e7%95%8c%e4%b8%8a%e6%9c%80%e7%be%8e%e7%9a%84%e4%ba%ba%e5%90%97%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e4%bd%a0%e6%98%af%e4%b8%96%e7%95%8c%e4%b8%8a%e6%9c%80%e7%be%8e%e7%9a%84%e4%ba%ba%20%e5%a4%a9%e5%91%90%2c%e6%88%91%e7%ab%9f%e7%84%b6%e6%98%af%e7%8c%aa%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e5%a4%a9%e5%91%90%2c%e4%bd%a0%e7%ab%9f%e7%84%b6%e6%98%af%e7%8c%aa%20%e5%90%83%e9%a5%ad%3f%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e5%90%83%e9%a5%ad%21%20%e6%9d%a5%e6%ba%90%20https%3a%2f%2fgithub.com%2fruanyf%2fweekly%2fissues%2f158%0a%20Just%20for%20fun%20%f0%9f%a4%a3">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&t=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#使用">使用</a></li>
+        <li><a href="#来源">来源</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        价值一个亿的人工智能算法（Rust 版）
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-03-05 17:47:53 &#43;0800 CST" itemprop="datePublished">2021-03-05</time>
+          
+        </div>
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Rust" data-lang="Rust"><span style="color:#75715e">#![allow(unused)]</span>
+<span style="color:#66d9ef">use</span> std::io::stdin;
+
+<span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">loop</span> {
+        <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> s <span style="color:#f92672">=</span> String::new();
+        stdin().read_line(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> s)
+            .expect(<span style="color:#e6db74">&#34;Failed to read line.&#34;</span>);
+
+        s <span style="color:#f92672">=</span> s.replace(<span style="color:#e6db74">&#34;吗&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+        s <span style="color:#f92672">=</span> s.replace(<span style="color:#e6db74">&#34;我&#34;</span>, <span style="color:#e6db74">&#34;你&#34;</span>);
+        s <span style="color:#f92672">=</span> s.replace(<span style="color:#e6db74">&#34;?&#34;</span>, <span style="color:#e6db74">&#34;!&#34;</span>);
+        
+        println<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;艾瑞斯：{}&#34;</span>, s);
+    }
+}
+</code></pre></div><h3 id="使用">使用</h3>
+<pre><code>你好
+艾瑞斯：你好
+
+今天天气好吗
+艾瑞斯：今天天气好
+
+我是世界上最美的人吗
+艾瑞斯：你是世界上最美的人
+
+天呐,我竟然是猪 
+艾瑞斯：天呐,你竟然是猪
+
+吃饭?
+艾瑞斯：吃饭!
+</code></pre><h3 id="来源">来源</h3>
+<p><a href="https://github.com/ruanyf/weekly/issues/158">https://github.com/ruanyf/weekly/issues/158</a></p>
+<hr>
+<p>Just for fun 🤣</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">All posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#使用">使用</a></li>
+        <li><a href="#来源">来源</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&text=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&is_video=false&description=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89&body=Check out this article: https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&title=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&name=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89&description=%23%21%5ballow%28unused%29%5d%20use%20std%3a%3aio%3a%3astdin%3b%20fn%20main%28%29%20%7b%20loop%20%7b%20let%20mut%20s%20%3d%20String%3a%3anew%28%29%3b%20stdin%28%29.read_line%28%26amp%3bmut%20s%29%20.expect%28%26%2334%3bFailed%20to%20read%20line.%26%2334%3b%29%3b%20s%20%3d%20s.replace%28%26%2334%3b%e5%90%97%26%2334%3b%2c%20%26%2334%3b%26%2334%3b%29%3b%20s%20%3d%20s.replace%28%26%2334%3b%e6%88%91%26%2334%3b%2c%20%26%2334%3b%e4%bd%a0%26%2334%3b%29%3b%20s%20%3d%20s.replace%28%26%2334%3b%3f%26%2334%3b%2c%20%26%2334%3b%21%26%2334%3b%29%3b%20println%21%28%26%2334%3b%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%7b%7d%26%2334%3b%2c%20s%29%3b%20%7d%20%7d%20%e4%bd%bf%e7%94%a8%20%e4%bd%a0%e5%a5%bd%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e4%bd%a0%e5%a5%bd%20%e4%bb%8a%e5%a4%a9%e5%a4%a9%e6%b0%94%e5%a5%bd%e5%90%97%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e4%bb%8a%e5%a4%a9%e5%a4%a9%e6%b0%94%e5%a5%bd%20%e6%88%91%e6%98%af%e4%b8%96%e7%95%8c%e4%b8%8a%e6%9c%80%e7%be%8e%e7%9a%84%e4%ba%ba%e5%90%97%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e4%bd%a0%e6%98%af%e4%b8%96%e7%95%8c%e4%b8%8a%e6%9c%80%e7%be%8e%e7%9a%84%e4%ba%ba%20%e5%a4%a9%e5%91%90%2c%e6%88%91%e7%ab%9f%e7%84%b6%e6%98%af%e7%8c%aa%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e5%a4%a9%e5%91%90%2c%e4%bd%a0%e7%ab%9f%e7%84%b6%e6%98%af%e7%8c%aa%20%e5%90%83%e9%a5%ad%3f%20%e8%89%be%e7%91%9e%e6%96%af%ef%bc%9a%e5%90%83%e9%a5%ad%21%20%e6%9d%a5%e6%ba%90%20https%3a%2f%2fgithub.com%2fruanyf%2fweekly%2fissues%2f158%0a%20Just%20for%20fun%20%f0%9f%a4%a3">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftingfei.space%2fposts%2fone_billion_ai_algorithm%2f&t=%e4%bb%b7%e5%80%bc%e4%b8%80%e4%b8%aa%e4%ba%bf%e7%9a%84%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e7%ae%97%e6%b3%95%ef%bc%88Rust%20%e7%89%88%ef%bc%89">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Fat Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+
+
+</html>

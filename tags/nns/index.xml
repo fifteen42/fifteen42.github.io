@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NNS on Fat Blog</title>
+    <link>https://tingfei.space/tags/nns/</link>
+    <description>Recent content in NNS on Fat Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 May 2021 15:33:50 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/nns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NNS 治理系统概念总结</title>
+      <link>https://tingfei.space/posts/nns_summary/</link>
+      <pubDate>Tue, 18 May 2021 15:33:50 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/nns_summary/</guid>
+      <description>Understanding the Internet Computer’s Network Nervous System, Neurons, and ICP Utility Tokens 是官方对 互联网计算机（Internet Computer）的网络神经系统（Network Nervous System, 简称 NNS）的讲解，内容包括 NNS，神经元，ICP 代币经济。本文对其中的关键概念进行了梳理和总结。
+ 注意，原文主要描述了 NNS 治理系统的经济层面的设计细节，需要对互联网计算机、canister等概念有一定理解。
+  概况 互联网计算机（Internet Computer）是 Dfinity 基金会推出的自适应区块链，其智能合约（canister）可以承载传统 web 应用，因此也可以理解为一种去中心化的云服务平台（类比AWS、阿里云）。
+互联网计算机由网络神经系统（NNS）治理，NNS 相当于互联网计算机的大脑。
+NNS 本身也是互联网计算机的子网之一，所以升级和调整不会打断互联网计算机的运行。
+NNS 可以做到的事情有：升级节点以更新协议或修复漏洞、调整经济参数、添加新的子网以扩容、拆分子网、冻结恶意应用等等。
+用户可以质押 ICP 代币生成神经元，从而参与到 NNS 中进行投票治理并获取投票奖励。
+用户通过神经元向 NNS 发起提议，其他神经元针对提议投票（接受或者拒绝）。
+每个提议都会有一个类型，比如 “#NodeAdmin” “#NetworkEconomics”，代表着不同类型的事务。
+如果提议被接受，它将会立即自动化执行。
+如果提议被拒绝，发起提议的神经元将会被收取一定费用，以避免过多的 “垃圾提议”。
+神经元 用户可以锁定 ICP 代币生成神经元，参与投票治理并获取投票奖励。
+神经元创建成功后，开始计算年龄。
+随着投票活动的增加，神经元的成熟度将会随之增加。
+当神经元的成熟度达到某一阈值，可以生成一个新的神经元作为奖励，新神经元中的代币数量为原神经元的代币数量乘以原神经元的成熟度。
+用户需要溶解神经元才能取回对应代币，溶解所需的时间称为溶解延迟。
+只有溶解延迟超过 6 个月的神经元才能参与投票治理以及发起提议。
+可以向神经元转账以增加质押量，但年龄以及成熟度会按比例缩减。
+溶解延迟由用户在创建神经元时设置，溶解延迟最多 8 年。
+溶解过程中，用户可以随时停止溶解回到锁定状态，但神经元的年龄会重新从 0 开始计算。</description>
+    </item>
+    
+  </channel>
+</rss>

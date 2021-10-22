@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mastering bitcoin on Fat Blog</title>
+    <link>https://tingfei.space/tags/mastering-bitcoin/</link>
+    <description>Recent content in mastering bitcoin on Fat Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Nov 2019 17:47:13 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/mastering-bitcoin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重读精通比特币</title>
+      <link>https://tingfei.space/posts/mastering-bitcoin/</link>
+      <pubDate>Sun, 24 Nov 2019 17:47:13 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/mastering-bitcoin/</guid>
+      <description>《精通比特币》这本书说实话我就很久很久以前别人就给我推荐过，我也断断续续的看了几次了（好像每次都没有完整的读完）
+但是有些概念，总是理解的模模糊糊，特别是我最近读 parity-bitcoin 源码的时候，总会时不时的有一些疑问
+就比如隔离见证，虽然之前概念都算勉强知道，但是等到代码层面就有点吃力了
+这块石头也该挪走了，我打算配合着 parity-bitcoin 重新精读一遍精通比特币。终极目标可能是在毕业之前能造个比特币客户端的轮子
+《精通比特币》的作者 Andreas M. Antonopoulos 是在 2011 年接触到比特币的，但是和许多聪明人一样，他最开始也没有理解这玩意儿，而是隔了几个月再次接触比特币之后才正经开始学，然后一发不可收拾
+在2014年《精通比特币》出版之后，这本书逐渐成为了学习区块链的入门首选，算是宝典级的区块链书籍了。值得一提的是，O’Reilly 这套书本来是叫做动物书，但是这本（切叶蚁）和之后出版的《精通以太坊》（蜜蜂）都是以昆虫为封面的
+作者在前言里也讲了封面故事，我觉得挺有意思的：
+ 在群居生物物种中，切叶蚁表现出了高度复杂行为的物种特征。但是，群落中的每一只蚂蚁个体仅仅遵循一些社会互动和化学气味（即信息素）交换的简单规则。维基百科提到：“切叶蚁形成地球上仅次于人类的最为庞大且复杂的动物社会。”实际上，切叶蚁不吃叶子，而是使用叶子制造一种真菌来充当蚁群主要食物来源。意识到了吗？它们在耕作！
+  虽然切叶蚁形成的是阶级社会，且依靠蚁后繁衍后代，但是在蚁群中不存在中央集权体制或领导人。通过切叶蚁我们可以看到，群落中数百万成员所展现的高度智能且复杂的行为是社会网络中的个体互动这一性质的凸显。
+ 题外话：其实我小时候就挺喜欢切叶蚁的，小时候看动物世界，关于蚂蚁我最喜欢的两个画面一个是黑猩猩用树枝弄蚂蚁吃，另一个就是切叶蚁扛着叶子整整齐齐地在森林里浩浩荡荡
+区块链的各种入门资料真的是参差不齐，之前犯傻把市面上的区块链的书差不多都买来宿舍堆着，也看了好多网上的资料。但是最后除了让一堆概念冲的头昏脑涨，也感觉没学到个啥。导致我现在看到区块链科普性质的东西就会有点类似于审美疲劳的那种感觉。
+所以现在的话，要是让我总结学习经验的话，就两点：
+ 找到最好的资料 输出式学习  就拿比特币举例
+ 最好的资料：比特币白皮书、精通比特币、比特币源码 输出式学习：写博客、给别人讲、造轮子  所以之后也会持续在这里写源码阅读和读书笔记的博客。日常一点的文章会放在我的公众号上面：与自己的邂逅。感兴趣可以关注哈哈哈</description>
+    </item>
+    
+  </channel>
+</rss>

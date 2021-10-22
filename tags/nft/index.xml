@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NFT on Fat Blog</title>
+    <link>https://tingfei.space/tags/nft/</link>
+    <description>Recent content in NFT on Fat Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 22 Dec 2020 14:01:23 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/nft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于数字收藏品的一点思考</title>
+      <link>https://tingfei.space/posts/digital_collections/</link>
+      <pubDate>Tue, 22 Dec 2020 14:01:23 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/digital_collections/</guid>
+      <description>昨天刷微博看到带有“交通互联”标志的交通卡可以在支持交通互联的任何城市使用，而不需要办理任何其他手续。我特地搜了搜，发现很多城市都已经开通了。而且各种各样的交通卡看起来都挺有意思的，遂产生了收藏的想法。随便放两张图片
+有两种收藏的方式：实体的或者电子的。实体的交通卡看得见摸得着而且不用依托其他物理设备，缺点是办起来麻烦，要么二手交易，要么到所在城市去办。电子的交通卡(苹果钱包)办起来方便，收藏成本也比较低，缺点是必须依托手机以及相应 APP ，而且可能会由于 APP 的下架或者官方的更新等等原因变得不一样了，这样的话电子交通卡给人的“拥有感”就没有那么强了。 所以如果我真要二者选其一收藏的话，我应该还是会选择实体卡吧。
+作为一个区块链从业者，可不能让电子交通卡这么容易就输了，我自然地想到 NFT 这种方式：将每张交通卡都映射为区块链上独一无二的资产。这样的话，电子交通卡能够保存的时间甚至可以超过实体卡，并且交易起来也甚至更方便了。
+但是谁会来收藏这样的交通卡呢？ 排除投机的意图，我觉得这是需要对加密资产有一定认知程度的人才会去收藏这样的东西，就像是一幅画，也是要有鉴赏力的人可能才会去收藏，而对加密资产的收藏也是要有对应的“鉴赏力”。就比如之前我买 cryptokitties 的时候被人吐槽：&amp;ldquo;我绝不会花几千块钱，去买这样的卡通猫猫图片。&amp;rdquo;
+此外，由于交通卡也是一种储值卡，天然带有资产属性，我想如果可以将交通卡的资产系统融入到区块链这个去中心化体系中去，听起来就更有意思了。或者区块链上会有一个交通互联的Dapp，又或许还会有交通卡的盲盒呢，哈哈。
+在国内做到类似事情的，我看到的有 Nervos 生态的 Portal Wallet，不知道这个到处“白嫖”基础设施的项目有没有能力再“白嫖”一下交通卡😂</description>
+    </item>
+    
+  </channel>
+</rss>

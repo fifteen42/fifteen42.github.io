@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>共识协议 on Fat Blog</title>
+    <link>https://tingfei.space/tags/%E5%85%B1%E8%AF%86%E5%8D%8F%E8%AE%AE/</link>
+    <description>Recent content in 共识协议 on Fat Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Jul 2021 11:36:18 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/%E5%85%B1%E8%AF%86%E5%8D%8F%E8%AE%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>互联网计算机共识协议介绍</title>
+      <link>https://tingfei.space/posts/icc-intro/</link>
+      <pubDate>Mon, 05 Jul 2021 11:36:18 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/icc-intro/</guid>
+      <description>互联网计算机共识协议（ICC）本质是一种优化版的 BFT 共识算法。本文对官方文章 Achieving Consensus on the Internet Computer 做了一些总结和梳理，旨在介绍互联网计算机（Internet Computer，简称 IC）的共识协议。
+需要注意的是，互联网计算机由子网组成，每个子网相当于一条独立的区块链，节点只在子网内部参与共识，跨子网的信息不参与共识而是由 Chain Key 技术来提供验证。所以本文所讲的共识算法，仅指的是子网内部的共识算法。
+概况 对什么达成共识？
+互联网计算机（Internet Computer）是 Dfinity 基金会推出的自适应区块链，其智能合约（canister）可以承载传统 web 应用，因此也可以理解为一种去中心化的云服务平台（类比AWS、阿里云）。
+互联网计算机由分布在世界各地数据中心中的节点组成：
+ 数据中心运维节点，提供底层硬件。 节点会被划分为各个子网，并在子网内完成共识，子网数量可以增加。 应用以 canister 为单元运行于子网中，canister 为 IC 的的智能合约。  共识的内容为：用户与 canister 之间的通信、canister 之间的通信以及这些通信的顺序。不同节点收到的信息的顺序可能不一样，但是处理信息的顺序必须相同。
+共识目标
+在不正常（恶意、掉线等情况）节点数小于总节点数的三分之一时，都能保证以下三个特性：
+ 安全性：在某个时刻如果两个节点认为他们对区块链达成了共识，那么他们实际上他们所看到的区块链就应该是同样的； 活跃性：区块会持续增长，系统会持续处理新增信息； 有效性：区块链中所有的区块和区块中的信息都是有效的，比如所有信息都被其发送者正确签名了；  共识组成部分
+ 区块构造：构造候选区块 公证：保证区块的有效性 随机数灯塔：对随机性达成共识以加速 敲定：确定共识达成的时间  下面以一个4节点的子网为例，按照共识的四个组成部分来描述子网是如何达成共识的。
+一、区块构造 子网中的节点充当区块构造器，负责构造区块并通过向子网广播提议新区块。
+在某个特定的区块高度，比如区块高度 30，区块构造器负责把所有可获得的有效信息打包到一个区块中，然后广播。
+有效信息包括：用户与 canister 的通信、 canister 之间的通信以及这些通信的顺序。
+二、公证 公证过程中，节点使用 BLS 门限签名(2f + 1)对区块进行公证，当三分之二的节点验证并签名一个区块时，这个区块就获得了公证。节点的私钥通过 DKG （分布式密钥生成）来产生。</description>
+    </item>
+    
+  </channel>
+</rss>

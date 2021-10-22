@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rust on Fat Blog</title>
+    <link>https://tingfei.space/tags/rust/</link>
+    <description>Recent content in rust on Fat Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Nov 2020 15:11:30 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为什么用 assert_eq 比较 string 和 &amp;str 会成功？</title>
+      <link>https://tingfei.space/posts/compare_string_and_str/</link>
+      <pubDate>Fri, 20 Nov 2020 15:11:30 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/compare_string_and_str/</guid>
+      <description>昨天写代码的时候发现用 assert_eq 比较 string 和 &amp;amp;str 会成功，如下：
+let s1 = String::from(&amp;#34;hello&amp;#34;); let s2 = &amp;#34;hello&amp;#34;; assert_eq!(s1, s2); 凭直觉来讲，这不应该能通过，因为 string 和 &amp;amp;str 是两种类型，然后我觉得是 assert_eq 这个宏做了特殊处理，于是我又试了一下
+let s1 = String::from(&amp;#34;hello&amp;#34;); let s2 = &amp;#34;hello&amp;#34;; assert!(s1 == s2); 发现也没有问题，这说明和 assert_eq 没啥关系，于是我在 reddit 以及 Rust 中文社区提问，一个老哥的回答是：
+ String and &amp;amp;str cannot be compared at all, so Rust will look for ways to make the comparison possible. It will find that s1.deref() returns &amp;amp;str which obviously can be compared to &amp;amp;str (because Strings implement Deref&amp;lt;Target=str&amp;gt;) so it will automatically use that.</description>
+    </item>
+    
+    <item>
+      <title>想学学 web 开发？来看看这个项目：RealWorld</title>
+      <link>https://tingfei.space/posts/real-world/</link>
+      <pubDate>Sat, 24 Oct 2020 17:49:20 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/real-world/</guid>
+      <description>最近想学习一下用 Rust 开发 web 应用，以便之后快速搭建 web 服务。程序员嘛，难免偶尔就要搭个网站什么的。
+关于框架和语言的选择，我想用 Rust 做后端，React 做前端。用 Rust 作后端因为 Rust 是我目前的主力开发语言，想多用用。本来也想用 Rust 开发前端的，然后也有 Yew 这样比较优秀的 Rust 前端框架，但是想了想 React 的生态，只能说真香了。
+在 GitHub 上一番搜索后发现了这个超出我预期的项目：RealWorld
+简单描述一下：这个项目的目标是构建一个类似于Medium的博客网站。项目独特的地方在于，可以任意搭配不同语言的前后端，因为前后端都遵循同样的API接口设计。此外，还有一个我很喜欢的点是最终构建的项目功能比较齐全，是一个可以实际使用的产品，但是又没有太复杂。因为有很多的教程或者项目，要么是太简易，以至于当要真正开发一个产品的时候又没什么头绪，要么是太复杂，不容易上手。
+我大致翻了一下，感觉大部分我听说过的语言和前后端框架上面都有。下面我放几个 star 比较多：
+前端：
+后端：
+然后我从中选了 React/Redux作为前端以及 Rust/actix 作为后端。
+跑了跑这两个项目，运行的过程都非常顺滑，特别是Rust的后端框架，项目结构很清晰，看着非常舒服。配套的东西也都很全，比如postman测试包和运行着的的后端接口。后面准备基于这两个项目改一个产品出来。
+感觉这个项目特别适合刚学完一门语言用来练练手。
+最后，特意等了几分钟到10月24号了，祝猿/媛们节日快乐，多点头发，少点 Bug，嘿嘿。</description>
+    </item>
+    
+  </channel>
+</rss>
