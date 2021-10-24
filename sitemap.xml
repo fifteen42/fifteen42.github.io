@@ -4,17 +4,27 @@
   
   <url>
     <loc>https://tingfei.space/</loc>
-    <lastmod>2021-07-11T17:19:52+08:00</lastmod>
+    <lastmod>2021-08-22T21:02:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tingfei.space/tags/nft/</loc>
+    <lastmod>2021-08-22T21:02:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tingfei.space/posts/plaid_shirt/</loc>
+    <lastmod>2021-08-22T21:02:40+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://tingfei.space/posts/</loc>
-    <lastmod>2021-07-11T17:19:52+08:00</lastmod>
+    <lastmod>2021-08-22T21:02:40+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://tingfei.space/tags/</loc>
-    <lastmod>2021-07-11T17:19:52+08:00</lastmod>
+    <lastmod>2021-08-22T21:02:40+08:00</lastmod>
   </url>
   
   <url>
@@ -60,11 +70,6 @@
   <url>
     <loc>https://tingfei.space/posts/one_billion_ai_algorithm/</loc>
     <lastmod>2021-03-05T17:47:53+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tingfei.space/tags/nft/</loc>
-    <lastmod>2020-12-22T14:01:23+08:00</lastmod>
   </url>
   
   <url>
@@ -139,10 +144,6 @@
   
   <url>
     <loc>https://tingfei.space/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://tingfei.space/posts/plaid_shirt/</loc>
   </url>
   
 </urlset>
