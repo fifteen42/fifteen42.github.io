@@ -6,7 +6,26 @@
     <description>Recent content in Posts on Fat Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Aug 2021 21:02:40 +0800</lastBuildDate><atom:link href="https://tingfei.space/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 11:50:02 +0800</lastBuildDate><atom:link href="https://tingfei.space/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SBT 的来龙去脉</title>
+      <link>https://tingfei.space/posts/sbt/</link>
+      <pubDate>Mon, 20 Jun 2022 11:50:02 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/sbt/</guid>
+      <description>SBT 最早由 Vitalik 在今年一月的一篇文章中提出，并在 Decentralized Society: Finding Web3&amp;rsquo;s Soul 这篇论文被详细阐述。
+Soulbound 这个词可能有点怪，它来自于魔兽世界，游戏中大多数非常强大的装备都是灵魂绑定的，即一旦被拾取就不能被玩家转让以及出售。所以简单来说，Soulbound Token（SBT）可以理解为一种不可转让的 NFT。
+SBT 的定义或许比较简单，但它的背后的思想却非常深刻。整个世界在逐渐地数字化，社会形态和社会结构发生了很大的变化，那么在这样一个新的社会或者说元宇宙中，如何定义个人社会身份，即构建一种数字原生的身份系统，这可能是 SBT 想解决的根本问题。
+谈到 Soulbound , 不得不先谈一下 RadicalxChange 这个非盈利组织。Decentralized Society: Finding Web3&amp;rsquo;s Soul 的第一作者 E. Glen Weyl 是 RadicalxChange 的创始人（同时他也是《激进市场》的共同作者），其董事会成员包括 Vitalik。RadicalxChange 还深入研究了包括二次方投票在内的诸多话题。可以说这里是 Soulbound Token 背后思想的起源地。
+RadicalxChange 认为互联网的底层架构一直以来缺失了一个身份层。这一层的功能长期以来由互联网商业巨头（Google、Meta、电子邮件提供商等）来提供，他们已经成为数十亿互联网用户实际上的身份提供者。这些商业服务所创造的身份结构形式长期以来一直与互联网的基本精神相矛盾。
+DIDs(去中心化标识符)的诞生部分解决了这个问题：DIDs 允许用户使用开放的标准生成自己的 ID，并将相关身份信息存储到区块链这样的可信存储平台上而不是某个互联网巨头的服务器里。DIDs 可以去唯一标记一个信息资源，提供了一种关于身份的良好载体，但 DIDs 依然严重依赖现有的中心化机构去颁发各种身份凭证。
+重要的不仅是身份的载体，如何定义我们的身份同样非常重要，简单地增加一些身份凭证颁发者数量的意义并不大。我们需要从社会关系网络中创造新的信任路径，进而形成更去中心化的身份凭证基础设施，并逐步取代原有的数字权利中心（机构，学校，银行等）去定义我们的身份。多元身份（Plural Identity）提供了一种解决方案。
+多元身份（Plural Identity）简单来说就是尽可能多的扩大凭证颁发者的数量。我觉得多元身份系统是一种更自然的身份系统，毕竟就算没有身份证和大学毕业证书以及其他的各种机构的证书，我们也拥有一个社会身份，社会身份的确定是由人与人之间关系和信任构成的，而这个过程本身就是多元的。多元身份更好的体现了人类身份的社会性和多维性的特点。 而 SBT 其实就是塑造多元身份的一种方式。
+一个账户（地址）可以理解为一个灵魂，灵魂背后可能代表着个人、机构、组织等等，一个灵魂可以拥有多个 SBT。SBT 对应着一系列的关系、成员资格和证书等等。个人或者组织都可以向其他灵魂发行 SBT，进而形成“灵魂网络”。这种关系网络和信任网络中，我们的身份被逐渐定义。正如社会网络理论的创始人乔治·西梅尔所说：个人身份从社会群体的交集中出现，正如社会群体从个人的交集中出现一样。
+关于 SBT 的应用场景，论文中讲的非常详尽清晰了，这里仅仅简单列举几个：
+ 声誉提供：比如现在艺术家可以直接通过他持有的 SBT 来证明他的真实性和声誉程度，而不再依赖推特等 web2 平台 web3 原生信用贷款：区块链是创造信任的机器，但是区块链世界或者说 web3 并没有一个信任网络，比如 Defi 至今没有出现原生的信用贷款。以 SBT 为根基可以创造出一个抗审查的、自下而上的“社会”信贷系统，从而减少对集中的、不透明的信用评分基础设施的依赖。 SBT 社区恢复：SBTs 本身就可以代表一定的社会关系和社会信任，所以就不必费劲选定和维护账号监护人了，直接使用灵魂社区来代替即可。 灵魂空投：针对特定的 SBT 来精确吸引灵魂。 灵魂治理：使用 SBT 部分代替金融资本进行投票，以避免富豪统治；二次方投票中，通过计算两个灵魂的相关性，来赋予相应的投票权重  关于 SBT 以及 Desoc 的实践现在处于非常早期的阶段，尚未有成熟的标准，但也已经涌现了一些相关实现。关于 SBT 的实现，社区正在不断的讨论，比如 SBT 一定要放到链上吗?</description>
+    </item>
+    
     <item>
       <title>1024 件独一无二的格子衫</title>
       <link>https://tingfei.space/posts/plaid_shirt/</link>
