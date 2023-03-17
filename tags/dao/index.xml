@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DAO on Fat Blog</title>
+    <link>https://tingfei.space/tags/dao/</link>
+    <description>Recent content in DAO on Fat Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Jul 2022 23:51:08 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/dao/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我为什么选择做一个 DAO 而不是一个项目？</title>
+      <link>https://tingfei.space/posts/souldao/</link>
+      <pubDate>Thu, 28 Jul 2022 23:51:08 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/souldao/</guid>
+      <description>今年二月底，我从上一个公司离职，此时我已经做了所谓区块链研究员一年多了，泛泛的看了很多技术和项目，但总感觉自己什么都不会，想着一定要去创造一点什么东西才有意思。
+但我几乎没有大型项目搭建经验，JS 也忘得差不多了。还能怎么办，只能开始从头学起：JS、React、Next、Express、Solidity&amp;hellip; 好在 JS 加上 Solidity 就能搭建大部分的 web3 产品功能了。对于想上手 Web3 产品开发的同学，这里推荐郭宇的「Web3 DApp 最佳编程实践指南」。
+四月和五月没出过门一直闷头学东西，当然我在上海，想出也出不去。我原来是个重度拖延症患者，事情能拖就一定拖着，但这两个月我没办法拖延了，因为我根本就没有 DDL，我自由地选择学习的内容、方式和时间，这个时候神奇的事情发生了，我的学习效率和开发效率都达到了一个全新的水平且毫无痛苦，在一个多月的时间里我补充了开发一个 Web3 产品所需要的基础知识。同时我也摸索出了一套更适合自由职业者的工作模式，后面会单独写一篇文章分享。
+除了开发之外，这期间有两篇文章引起了我极大的兴趣，一篇是 「去中心化社会：寻找 Web3 的灵魂」, 另外一篇是超哥写的「Web3与社会资本」。看完之后我就坚定的相信 SBT 这类技术会是 Web3 的下一个浪潮，目前 web3 实际上大部分项目和用户都还是在玩金融数字游戏，但如果 SBT 能将社会信用编码到 web3 网络中，整个行业将会发生翻天覆地的变化。我对 SBT 的一些理解放在这篇文章中：「SBT 的来龙去脉」。
+心里逐渐有了一些想法后，刚好看到 ETH Shanghai 黑客松 是 Web3 Social 主题，然后我用了大概三周时间做了 DAOU（谐音 DAO 友）这个项目：一个基于社交预言机和 SBT 的 DAO 声誉工具，通过社交关系交叉验证的方式将 DAO 成员在 DAO 中的行为数据转化为链上可验证数据从而构建 DAO 成员在 Web3 世界的灵魂画像。
+令我惊喜的是，DAOU 最后竟然在两百多个参赛项目中拿到了并列第三名，之后参加 GR14 也获得了将近 900 人次的捐赠。我也联系了曾经学校里一起创过业的的老搭档还有在 Developer DAO 里认识的朋友，试图搭建一个团队正式推进这个项目。
+同时黑客松主办方 Mask 和评委项目 KNN3 都对 DAOU 提供很多支持和帮助，也帮助对接了很多的投资机构。我们聊了将近 20 家投资机构，其中既有 Web3 圈内的投资机构也有传统领域的投资机构，甚至包括腾讯云战投这样投资机构，不知道是该高兴 web3 发展的还不错，还是该感叹 Web2 实在也没啥能赚钱的了。在熊市，机构出手也非常谨慎，整体决策流程也比较慢，但即使如此，也有几家机构和我们达成了初步的投资意向。</description>
+    </item>
+    
+  </channel>
+</rss>

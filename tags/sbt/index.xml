@@ -6,7 +6,22 @@
     <description>Recent content in SBT on Fat Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jun 2022 11:50:02 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/sbt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jul 2022 23:51:08 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/sbt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我为什么选择做一个 DAO 而不是一个项目？</title>
+      <link>https://tingfei.space/posts/souldao/</link>
+      <pubDate>Thu, 28 Jul 2022 23:51:08 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/souldao/</guid>
+      <description>今年二月底，我从上一个公司离职，此时我已经做了所谓区块链研究员一年多了，泛泛的看了很多技术和项目，但总感觉自己什么都不会，想着一定要去创造一点什么东西才有意思。
+但我几乎没有大型项目搭建经验，JS 也忘得差不多了。还能怎么办，只能开始从头学起：JS、React、Next、Express、Solidity&amp;hellip; 好在 JS 加上 Solidity 就能搭建大部分的 web3 产品功能了。对于想上手 Web3 产品开发的同学，这里推荐郭宇的「Web3 DApp 最佳编程实践指南」。
+四月和五月没出过门一直闷头学东西，当然我在上海，想出也出不去。我原来是个重度拖延症患者，事情能拖就一定拖着，但这两个月我没办法拖延了，因为我根本就没有 DDL，我自由地选择学习的内容、方式和时间，这个时候神奇的事情发生了，我的学习效率和开发效率都达到了一个全新的水平且毫无痛苦，在一个多月的时间里我补充了开发一个 Web3 产品所需要的基础知识。同时我也摸索出了一套更适合自由职业者的工作模式，后面会单独写一篇文章分享。
+除了开发之外，这期间有两篇文章引起了我极大的兴趣，一篇是 「去中心化社会：寻找 Web3 的灵魂」, 另外一篇是超哥写的「Web3与社会资本」。看完之后我就坚定的相信 SBT 这类技术会是 Web3 的下一个浪潮，目前 web3 实际上大部分项目和用户都还是在玩金融数字游戏，但如果 SBT 能将社会信用编码到 web3 网络中，整个行业将会发生翻天覆地的变化。我对 SBT 的一些理解放在这篇文章中：「SBT 的来龙去脉」。
+心里逐渐有了一些想法后，刚好看到 ETH Shanghai 黑客松 是 Web3 Social 主题，然后我用了大概三周时间做了 DAOU（谐音 DAO 友）这个项目：一个基于社交预言机和 SBT 的 DAO 声誉工具，通过社交关系交叉验证的方式将 DAO 成员在 DAO 中的行为数据转化为链上可验证数据从而构建 DAO 成员在 Web3 世界的灵魂画像。
+令我惊喜的是，DAOU 最后竟然在两百多个参赛项目中拿到了并列第三名，之后参加 GR14 也获得了将近 900 人次的捐赠。我也联系了曾经学校里一起创过业的的老搭档还有在 Developer DAO 里认识的朋友，试图搭建一个团队正式推进这个项目。
+同时黑客松主办方 Mask 和评委项目 KNN3 都对 DAOU 提供很多支持和帮助，也帮助对接了很多的投资机构。我们聊了将近 20 家投资机构，其中既有 Web3 圈内的投资机构也有传统领域的投资机构，甚至包括腾讯云战投这样投资机构，不知道是该高兴 web3 发展的还不错，还是该感叹 Web2 实在也没啥能赚钱的了。在熊市，机构出手也非常谨慎，整体决策流程也比较慢，但即使如此，也有几家机构和我们达成了初步的投资意向。</description>
+    </item>
+    
     <item>
       <title>SBT 的来龙去脉</title>
       <link>https://tingfei.space/posts/sbt/</link>
@@ -24,6 +39,18 @@ DIDs(去中心化标识符)的诞生部分解决了这个问题：DIDs 允许用
 一个账户（地址）可以理解为一个灵魂，灵魂背后可能代表着个人、机构、组织等等，一个灵魂可以拥有多个 SBT。SBT 对应着一系列的关系、成员资格和证书等等。个人或者组织都可以向其他灵魂发行 SBT，进而形成“灵魂网络”。这种关系网络和信任网络中，我们的身份被逐渐定义。正如社会网络理论的创始人乔治·西梅尔所说：个人身份从社会群体的交集中出现，正如社会群体从个人的交集中出现一样。
 关于 SBT 的应用场景，论文中讲的非常详尽清晰了，这里仅仅简单列举几个：
  声誉提供：比如现在艺术家可以直接通过他持有的 SBT 来证明他的真实性和声誉程度，而不再依赖推特等 web2 平台 web3 原生信用贷款：区块链是创造信任的机器，但是区块链世界或者说 web3 并没有一个信任网络，比如 Defi 至今没有出现原生的信用贷款。以 SBT 为根基可以创造出一个抗审查的、自下而上的“社会”信贷系统，从而减少对集中的、不透明的信用评分基础设施的依赖。 SBT 社区恢复：SBTs 本身就可以代表一定的社会关系和社会信任，所以就不必费劲选定和维护账号监护人了，直接使用灵魂社区来代替即可。 灵魂空投：针对特定的 SBT 来精确吸引灵魂。 灵魂治理：使用 SBT 部分代替金融资本进行投票，以避免富豪统治；二次方投票中，通过计算两个灵魂的相关性，来赋予相应的投票权重  关于 SBT 以及 Desoc 的实践现在处于非常早期的阶段，尚未有成熟的标准，但也已经涌现了一些相关实现。关于 SBT 的实现，社区正在不断的讨论，比如 SBT 一定要放到链上吗?</description>
+    </item>
+    
+    <item>
+      <title>SBT 相关标准介绍【一】</title>
+      <link>https://tingfei.space/posts/sbt_standards_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://tingfei.space/posts/sbt_standards_1/</guid>
+      <description>现在有很多 SBT 相关的标准和实现(不下十个)，这也就意味着大家对 SBT 理念有很多不同，但最终的标准只有持续的讨论和实践并经过市场的选择才能确定。本文介绍三个比较比较有意思的 SBT 相关 EIP 标准，此系列持续更新。
+EIP-4973: Account-bound Tokens Account-bound Tokens (ABT) 中文名可以叫做账号绑定代币，原因好像是作者认为世界各民族对灵魂的理解是不一样的，用账户可能更准确和中立一些。EIP-4973 创建于 2022-04-01 ，早于 Desoc 论文发布。目前 Otterspace 和 violet 在使用这个标准。处于 Review 阶段 (EIP 的创建流程大致可以视为四个阶段：Draft -&amp;gt; Review -&amp;gt; Last Call -&amp;gt; Final)。代币标准的总结如下：
+ 必须不实现 ERC721 的 transfer 相关的接口 代币持有人随时都可以将ABT 与自己的地址接触绑定：unequip 函数 可主动发送给接收方，也可以由接收方自主 mint : give 和 take 函数 支持 ERC721Metadata 所以钱包和交易平台可以复用 NFT 的基础设施，轻易的展示 ABT 接口数量很少关键的函数只有刚刚提到的这三个，保持最大的向后兼容性  EIP-4973 作者自己根据标准实现了一版合约
+EIP-5114: Soulbound Badge EIP-5114 的一个很不同的点是，这个标准是把 SBT 绑定到 NFT 而不是绑定到地址上。也引起了社区成员的很多讨论，很多人觉得把 SBT 绑 NFT 的需求好像不是很明显。但也有人觉得还是挺有意思（包括我），因为这其实给 NFT 增加了一些新的玩法，比如具有成长性的 NFT。这里也就抛出了一个重要的问题：SBT 到底应该绑到啥上面，绑地址当然最方便和直接，但是也会面临私钥丢失、换地址等问题。一些解决办法是绑定到 DID 或者使用社交恢复等方法，这里不展开，后面另开文章讨论。回到 EIP-5114 ，此标准创建于 2022-05-30 目前依然是 Draft 阶段，总价如下：</description>
     </item>
     
   </channel>

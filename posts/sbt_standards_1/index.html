@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> SBT 相关标准介绍【一】 | Fat Blog</title>
+  <meta name="description" content="想到啥写啥，内容主要包括区块链，科幻，美食等。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="SBT 相关标准介绍【一】" />
+<meta property="og:description" content="现在有很多 SBT 相关的标准和实现(不下十个)，这也就意味着大家对 SBT 理念有很多不同，但最终的标准只有持续的讨论和实践并经过市场的选择才能确定。本文介绍三个比较比较有意思的 SBT 相关 EIP 标准，此系列持续更新。
+EIP-4973: Account-bound Tokens Account-bound Tokens (ABT) 中文名可以叫做账号绑定代币，原因好像是作者认为世界各民族对灵魂的理解是不一样的，用账户可能更准确和中立一些。EIP-4973 创建于 2022-04-01 ，早于 Desoc 论文发布。目前 Otterspace 和 violet 在使用这个标准。处于 Review 阶段 (EIP 的创建流程大致可以视为四个阶段：Draft -&gt; Review -&gt; Last Call -&gt; Final)。代币标准的总结如下：
+ 必须不实现 ERC721 的 transfer 相关的接口 代币持有人随时都可以将ABT 与自己的地址接触绑定：unequip 函数 可主动发送给接收方，也可以由接收方自主 mint : give 和 take 函数 支持 ERC721Metadata 所以钱包和交易平台可以复用 NFT 的基础设施，轻易的展示 ABT 接口数量很少关键的函数只有刚刚提到的这三个，保持最大的向后兼容性  EIP-4973 作者自己根据标准实现了一版合约
+EIP-5114: Soulbound Badge EIP-5114 的一个很不同的点是，这个标准是把 SBT 绑定到 NFT 而不是绑定到地址上。也引起了社区成员的很多讨论，很多人觉得把 SBT 绑 NFT 的需求好像不是很明显。但也有人觉得还是挺有意思（包括我），因为这其实给 NFT 增加了一些新的玩法，比如具有成长性的 NFT。这里也就抛出了一个重要的问题：SBT 到底应该绑到啥上面，绑地址当然最方便和直接，但是也会面临私钥丢失、换地址等问题。一些解决办法是绑定到 DID 或者使用社交恢复等方法，这里不展开，后面另开文章讨论。回到 EIP-5114 ，此标准创建于 2022-05-30 目前依然是 Draft 阶段，总价如下：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tingfei.space/posts/sbt_standards_1/" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SBT 相关标准介绍【一】"/>
+<meta name="twitter:description" content="现在有很多 SBT 相关的标准和实现(不下十个)，这也就意味着大家对 SBT 理念有很多不同，但最终的标准只有持续的讨论和实践并经过市场的选择才能确定。本文介绍三个比较比较有意思的 SBT 相关 EIP 标准，此系列持续更新。
+EIP-4973: Account-bound Tokens Account-bound Tokens (ABT) 中文名可以叫做账号绑定代币，原因好像是作者认为世界各民族对灵魂的理解是不一样的，用账户可能更准确和中立一些。EIP-4973 创建于 2022-04-01 ，早于 Desoc 论文发布。目前 Otterspace 和 violet 在使用这个标准。处于 Review 阶段 (EIP 的创建流程大致可以视为四个阶段：Draft -&gt; Review -&gt; Last Call -&gt; Final)。代币标准的总结如下：
+ 必须不实现 ERC721 的 transfer 相关的接口 代币持有人随时都可以将ABT 与自己的地址接触绑定：unequip 函数 可主动发送给接收方，也可以由接收方自主 mint : give 和 take 函数 支持 ERC721Metadata 所以钱包和交易平台可以复用 NFT 的基础设施，轻易的展示 ABT 接口数量很少关键的函数只有刚刚提到的这三个，保持最大的向后兼容性  EIP-4973 作者自己根据标准实现了一版合约
+EIP-5114: Soulbound Badge EIP-5114 的一个很不同的点是，这个标准是把 SBT 绑定到 NFT 而不是绑定到地址上。也引起了社区成员的很多讨论，很多人觉得把 SBT 绑 NFT 的需求好像不是很明显。但也有人觉得还是挺有意思（包括我），因为这其实给 NFT 增加了一些新的玩法，比如具有成长性的 NFT。这里也就抛出了一个重要的问题：SBT 到底应该绑到啥上面，绑地址当然最方便和直接，但是也会面临私钥丢失、换地址等问题。一些解决办法是绑定到 DID 或者使用社交恢复等方法，这里不展开，后面另开文章讨论。回到 EIP-5114 ，此标准创建于 2022-05-30 目前依然是 Draft 阶段，总价如下："/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://tingfei.space/css/style-white.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://tingfei.space/images/favicon.ico" />
+
+  
+  
+  
+  
+  
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-WLHHMZN550', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://tingfei.space/posts/daliorshanghai/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://tingfei.space/posts/369workingsystem/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&text=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&is_video=false&description=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91&body=Check out this article: https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&name=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91&description=%e7%8e%b0%e5%9c%a8%e6%9c%89%e5%be%88%e5%a4%9a%20SBT%20%e7%9b%b8%e5%85%b3%e7%9a%84%e6%a0%87%e5%87%86%e5%92%8c%e5%ae%9e%e7%8e%b0%28%e4%b8%8d%e4%b8%8b%e5%8d%81%e4%b8%aa%29%ef%bc%8c%e8%bf%99%e4%b9%9f%e5%b0%b1%e6%84%8f%e5%91%b3%e7%9d%80%e5%a4%a7%e5%ae%b6%e5%af%b9%20SBT%20%e7%90%86%e5%bf%b5%e6%9c%89%e5%be%88%e5%a4%9a%e4%b8%8d%e5%90%8c%ef%bc%8c%e4%bd%86%e6%9c%80%e7%bb%88%e7%9a%84%e6%a0%87%e5%87%86%e5%8f%aa%e6%9c%89%e6%8c%81%e7%bb%ad%e7%9a%84%e8%ae%a8%e8%ae%ba%e5%92%8c%e5%ae%9e%e8%b7%b5%e5%b9%b6%e7%bb%8f%e8%bf%87%e5%b8%82%e5%9c%ba%e7%9a%84%e9%80%89%e6%8b%a9%e6%89%8d%e8%83%bd%e7%a1%ae%e5%ae%9a%e3%80%82%e6%9c%ac%e6%96%87%e4%bb%8b%e7%bb%8d%e4%b8%89%e4%b8%aa%e6%af%94%e8%be%83%e6%af%94%e8%be%83%e6%9c%89%e6%84%8f%e6%80%9d%e7%9a%84%20SBT%20%e7%9b%b8%e5%85%b3%20EIP%20%e6%a0%87%e5%87%86%ef%bc%8c%e6%ad%a4%e7%b3%bb%e5%88%97%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e3%80%82%0aEIP-4973%3a%20Account-bound%20Tokens%20Account-bound%20Tokens%20%28ABT%29%20%e4%b8%ad%e6%96%87%e5%90%8d%e5%8f%af%e4%bb%a5%e5%8f%ab%e5%81%9a%e8%b4%a6%e5%8f%b7%e7%bb%91%e5%ae%9a%e4%bb%a3%e5%b8%81%ef%bc%8c%e5%8e%9f%e5%9b%a0%e5%a5%bd%e5%83%8f%e6%98%af%e4%bd%9c%e8%80%85%e8%ae%a4%e4%b8%ba%e4%b8%96%e7%95%8c%e5%90%84%e6%b0%91%e6%97%8f%e5%af%b9%e7%81%b5%e9%ad%82%e7%9a%84%e7%90%86%e8%a7%a3%e6%98%af%e4%b8%8d%e4%b8%80%e6%a0%b7%e7%9a%84%ef%bc%8c%e7%94%a8%e8%b4%a6%e6%88%b7%e5%8f%af%e8%83%bd%e6%9b%b4%e5%87%86%e7%a1%ae%e5%92%8c%e4%b8%ad%e7%ab%8b%e4%b8%80%e4%ba%9b%e3%80%82EIP-4973%20%e5%88%9b%e5%bb%ba%e4%ba%8e%202022-04-01%20%ef%bc%8c%e6%97%a9%e4%ba%8e%20Desoc%20%e8%ae%ba%e6%96%87%e5%8f%91%e5%b8%83%e3%80%82%e7%9b%ae%e5%89%8d%20Otterspace%20%e5%92%8c%20violet%20%e5%9c%a8%e4%bd%bf%e7%94%a8%e8%bf%99%e4%b8%aa%e6%a0%87%e5%87%86%e3%80%82%e5%a4%84%e4%ba%8e%20Review%20%e9%98%b6%e6%ae%b5%20%28EIP%20%e7%9a%84%e5%88%9b%e5%bb%ba%e6%b5%81%e7%a8%8b%e5%a4%a7%e8%87%b4%e5%8f%af%e4%bb%a5%e8%a7%86%e4%b8%ba%e5%9b%9b%e4%b8%aa%e9%98%b6%e6%ae%b5%ef%bc%9aDraft%20-%26gt%3b%20Review%20-%26gt%3b%20Last%20Call%20-%26gt%3b%20Final%29%e3%80%82%e4%bb%a3%e5%b8%81%e6%a0%87%e5%87%86%e7%9a%84%e6%80%bb%e7%bb%93%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20%e5%bf%85%e9%a1%bb%e4%b8%8d%e5%ae%9e%e7%8e%b0%20ERC721%20%e7%9a%84%20transfer%20%e7%9b%b8%e5%85%b3%e7%9a%84%e6%8e%a5%e5%8f%a3%20%e4%bb%a3%e5%b8%81%e6%8c%81%e6%9c%89%e4%ba%ba%e9%9a%8f%e6%97%b6%e9%83%bd%e5%8f%af%e4%bb%a5%e5%b0%86ABT%20%e4%b8%8e%e8%87%aa%e5%b7%b1%e7%9a%84%e5%9c%b0%e5%9d%80%e6%8e%a5%e8%a7%a6%e7%bb%91%e5%ae%9a%ef%bc%9aunequip%20%e5%87%bd%e6%95%b0%20%e5%8f%af%e4%b8%bb%e5%8a%a8%e5%8f%91%e9%80%81%e7%bb%99%e6%8e%a5%e6%94%b6%e6%96%b9%ef%bc%8c%e4%b9%9f%e5%8f%af%e4%bb%a5%e7%94%b1%e6%8e%a5%e6%94%b6%e6%96%b9%e8%87%aa%e4%b8%bb%20mint%20%3a%20give%20%e5%92%8c%20take%20%e5%87%bd%e6%95%b0%20%e6%94%af%e6%8c%81%20ERC721Metadata%20%e6%89%80%e4%bb%a5%e9%92%b1%e5%8c%85%e5%92%8c%e4%ba%a4%e6%98%93%e5%b9%b3%e5%8f%b0%e5%8f%af%e4%bb%a5%e5%a4%8d%e7%94%a8%20NFT%20%e7%9a%84%e5%9f%ba%e7%a1%80%e8%ae%be%e6%96%bd%ef%bc%8c%e8%bd%bb%e6%98%93%e7%9a%84%e5%b1%95%e7%a4%ba%20ABT%20%e6%8e%a5%e5%8f%a3%e6%95%b0%e9%87%8f%e5%be%88%e5%b0%91%e5%85%b3%e9%94%ae%e7%9a%84%e5%87%bd%e6%95%b0%e5%8f%aa%e6%9c%89%e5%88%9a%e5%88%9a%e6%8f%90%e5%88%b0%e7%9a%84%e8%bf%99%e4%b8%89%e4%b8%aa%ef%bc%8c%e4%bf%9d%e6%8c%81%e6%9c%80%e5%a4%a7%e7%9a%84%e5%90%91%e5%90%8e%e5%85%bc%e5%ae%b9%e6%80%a7%20%20EIP-4973%20%e4%bd%9c%e8%80%85%e8%87%aa%e5%b7%b1%e6%a0%b9%e6%8d%ae%e6%a0%87%e5%87%86%e5%ae%9e%e7%8e%b0%e4%ba%86%e4%b8%80%e7%89%88%e5%90%88%e7%ba%a6%0aEIP-5114%3a%20Soulbound%20Badge%20EIP-5114%20%e7%9a%84%e4%b8%80%e4%b8%aa%e5%be%88%e4%b8%8d%e5%90%8c%e7%9a%84%e7%82%b9%e6%98%af%ef%bc%8c%e8%bf%99%e4%b8%aa%e6%a0%87%e5%87%86%e6%98%af%e6%8a%8a%20SBT%20%e7%bb%91%e5%ae%9a%e5%88%b0%20NFT%20%e8%80%8c%e4%b8%8d%e6%98%af%e7%bb%91%e5%ae%9a%e5%88%b0%e5%9c%b0%e5%9d%80%e4%b8%8a%e3%80%82%e4%b9%9f%e5%bc%95%e8%b5%b7%e4%ba%86%e7%a4%be%e5%8c%ba%e6%88%90%e5%91%98%e7%9a%84%e5%be%88%e5%a4%9a%e8%ae%a8%e8%ae%ba%ef%bc%8c%e5%be%88%e5%a4%9a%e4%ba%ba%e8%a7%89%e5%be%97%e6%8a%8a%20SBT%20%e7%bb%91%20NFT%20%e7%9a%84%e9%9c%80%e6%b1%82%e5%a5%bd%e5%83%8f%e4%b8%8d%e6%98%af%e5%be%88%e6%98%8e%e6%98%be%e3%80%82%e4%bd%86%e4%b9%9f%e6%9c%89%e4%ba%ba%e8%a7%89%e5%be%97%e8%bf%98%e6%98%af%e6%8c%ba%e6%9c%89%e6%84%8f%e6%80%9d%ef%bc%88%e5%8c%85%e6%8b%ac%e6%88%91%ef%bc%89%ef%bc%8c%e5%9b%a0%e4%b8%ba%e8%bf%99%e5%85%b6%e5%ae%9e%e7%bb%99%20NFT%20%e5%a2%9e%e5%8a%a0%e4%ba%86%e4%b8%80%e4%ba%9b%e6%96%b0%e7%9a%84%e7%8e%a9%e6%b3%95%ef%bc%8c%e6%af%94%e5%a6%82%e5%85%b7%e6%9c%89%e6%88%90%e9%95%bf%e6%80%a7%e7%9a%84%20NFT%e3%80%82%e8%bf%99%e9%87%8c%e4%b9%9f%e5%b0%b1%e6%8a%9b%e5%87%ba%e4%ba%86%e4%b8%80%e4%b8%aa%e9%87%8d%e8%a6%81%e7%9a%84%e9%97%ae%e9%a2%98%ef%bc%9aSBT%20%e5%88%b0%e5%ba%95%e5%ba%94%e8%af%a5%e7%bb%91%e5%88%b0%e5%95%a5%e4%b8%8a%e9%9d%a2%ef%bc%8c%e7%bb%91%e5%9c%b0%e5%9d%80%e5%bd%93%e7%84%b6%e6%9c%80%e6%96%b9%e4%be%bf%e5%92%8c%e7%9b%b4%e6%8e%a5%ef%bc%8c%e4%bd%86%e6%98%af%e4%b9%9f%e4%bc%9a%e9%9d%a2%e4%b8%b4%e7%a7%81%e9%92%a5%e4%b8%a2%e5%a4%b1%e3%80%81%e6%8d%a2%e5%9c%b0%e5%9d%80%e7%ad%89%e9%97%ae%e9%a2%98%e3%80%82%e4%b8%80%e4%ba%9b%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95%e6%98%af%e7%bb%91%e5%ae%9a%e5%88%b0%20DID%20%e6%88%96%e8%80%85%e4%bd%bf%e7%94%a8%e7%a4%be%e4%ba%a4%e6%81%a2%e5%a4%8d%e7%ad%89%e6%96%b9%e6%b3%95%ef%bc%8c%e8%bf%99%e9%87%8c%e4%b8%8d%e5%b1%95%e5%bc%80%ef%bc%8c%e5%90%8e%e9%9d%a2%e5%8f%a6%e5%bc%80%e6%96%87%e7%ab%a0%e8%ae%a8%e8%ae%ba%e3%80%82%e5%9b%9e%e5%88%b0%20EIP-5114%20%ef%bc%8c%e6%ad%a4%e6%a0%87%e5%87%86%e5%88%9b%e5%bb%ba%e4%ba%8e%202022-05-30%20%e7%9b%ae%e5%89%8d%e4%be%9d%e7%84%b6%e6%98%af%20Draft%20%e9%98%b6%e6%ae%b5%ef%bc%8c%e6%80%bb%e4%bb%b7%e5%a6%82%e4%b8%8b%ef%bc%9a">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&t=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#eip-4973-account-bound-tokenshttpseipsethereumorgeipseip-4973"><a href="https://eips.ethereum.org/EIPS/eip-4973">EIP-4973: Account-bound Tokens</a></a></li>
+        <li><a href="#eip-5114-soulbound-badgehttpseipsethereumorgeipseip-5114"><a href="https://eips.ethereum.org/EIPS/eip-5114">EIP-5114: Soulbound Badge</a></a></li>
+        <li><a href="#eip-5192-minimal-soulbound-nftshttpseipsethereumorgeipseip-5192"><a href="https://eips.ethereum.org/EIPS/eip-5192">EIP-5192: Minimal Soulbound NFTs</a></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        SBT 相关标准介绍【一】
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
+          
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/sbt" rel="tag">SBT</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/eip" rel="tag">EIP</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>现在有很多 SBT 相关的标准和实现(不下十个)，这也就意味着大家对 SBT 理念有很多不同，但最终的标准只有持续的讨论和实践并经过市场的选择才能确定。本文介绍三个比较比较有意思的 SBT 相关 EIP 标准，此系列持续更新。</p>
+<h3 id="eip-4973-account-bound-tokenshttpseipsethereumorgeipseip-4973"><a href="https://eips.ethereum.org/EIPS/eip-4973">EIP-4973: Account-bound Tokens</a></h3>
+<p>Account-bound Tokens (ABT) 中文名可以叫做账号绑定代币，原因好像是作者认为世界各民族对灵魂的理解是不一样的，用账户可能更准确和中立一些。EIP-4973 创建于 2022-04-01 ，早于 Desoc 论文发布。目前 <a href="https://www.otterspace.xyz/">Otterspace</a> 和 <a href="https://www.violet.co/">violet</a> 在使用这个标准。处于 Review 阶段 (<a href="https://eips.ethereum.org/">EIP 的创建流程</a>大致可以视为四个阶段：Draft -&gt; Review -&gt; Last Call -&gt; Final)。代币标准的总结如下：</p>
+<ul>
+<li>必须不实现 ERC721 的 transfer 相关的接口</li>
+<li>代币持有人随时都可以将ABT 与自己的地址接触绑定：unequip 函数</li>
+<li>可主动发送给接收方，也可以由接收方自主 mint : give 和 take 函数</li>
+<li>支持 ERC721Metadata 所以钱包和交易平台可以复用 NFT 的基础设施，轻易的展示 ABT</li>
+<li>接口数量很少关键的函数只有刚刚提到的这三个，保持最大的向后兼容性</li>
+</ul>
+<p>EIP-4973 作者自己根据标准实现了<a href="https://github.com/rugpullindex/ERC4973">一版合约</a></p>
+<h3 id="eip-5114-soulbound-badgehttpseipsethereumorgeipseip-5114"><a href="https://eips.ethereum.org/EIPS/eip-5114">EIP-5114: Soulbound Badge</a></h3>
+<p>EIP-5114 的一个很不同的点是，这个标准是把 SBT 绑定到 NFT 而不是绑定到地址上。也引起了社区成员的很多讨论，很多人觉得把 SBT 绑 NFT 的需求好像不是很明显。但也有人觉得还是挺有意思（包括我），因为这其实给 NFT 增加了一些新的玩法，比如具有成长性的 NFT。这里也就抛出了一个重要的问题：SBT 到底应该绑到啥上面，绑地址当然最方便和直接，但是也会面临私钥丢失、换地址等问题。一些解决办法是绑定到 DID 或者使用社交恢复等方法，这里不展开，后面另开文章讨论。回到 EIP-5114 ，此标准创建于 2022-05-30 目前依然是 Draft 阶段，总价如下：</p>
+<ul>
+<li>SBT 铸造时会绑定到某个 NFT 上，只能铸造一次并且不可转移</li>
+<li>SBT 也不可销毁，SBT 的内容也不可变</li>
+<li>对于 tokenUri 的数据格式不限制</li>
+</ul>
+<h3 id="eip-5192-minimal-soulbound-nftshttpseipsethereumorgeipseip-5192"><a href="https://eips.ethereum.org/EIPS/eip-5192">EIP-5192: Minimal Soulbound NFTs</a></h3>
+<p>从名字上就可以看出这个 EIP 很简洁，它旨在最大限度兼容现有的基础设施，即作为 EIP-721 的一个扩展。标准总结如下:</p>
+<ul>
+<li>EIP-5192 的函数只有一个：locked，当 NFT 状态为 locked 时则代表这是一个灵魂绑定代币，即所有转移 NFT 的函数调用都会报错</li>
+<li>钱包或者第三方应用可以通过 EIP-165 来查询一个 NFT 状态是否为 locked，即是否是一个 SBT</li>
+</ul>
+<p>目前 EIP-5192 已经进入 Last Call 阶段，9 月 12 日如果没有发现什么问题的话，就会进入 Final 阶段，就是到时候差不多可以在正式项目中使用了，EIP-5192 其实是让 SBT 的最快落地的一种方式了吧，因为简单不需要对原有标准有太多更改，也不会有太多安全问题，并且能最大限度的使用现有的基础设施。</p>
+<hr>
+<p>上述三个 SBT 标准，都是进入 EIP 创建流程的，下次会介绍一些其他类型的，比如结合 zk 的 SBT。如有错误欢迎指正。</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">All posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#eip-4973-account-bound-tokenshttpseipsethereumorgeipseip-4973"><a href="https://eips.ethereum.org/EIPS/eip-4973">EIP-4973: Account-bound Tokens</a></a></li>
+        <li><a href="#eip-5114-soulbound-badgehttpseipsethereumorgeipseip-5114"><a href="https://eips.ethereum.org/EIPS/eip-5114">EIP-5114: Soulbound Badge</a></a></li>
+        <li><a href="#eip-5192-minimal-soulbound-nftshttpseipsethereumorgeipseip-5192"><a href="https://eips.ethereum.org/EIPS/eip-5192">EIP-5192: Minimal Soulbound NFTs</a></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&text=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&is_video=false&description=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91&body=Check out this article: https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&title=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&name=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91&description=%e7%8e%b0%e5%9c%a8%e6%9c%89%e5%be%88%e5%a4%9a%20SBT%20%e7%9b%b8%e5%85%b3%e7%9a%84%e6%a0%87%e5%87%86%e5%92%8c%e5%ae%9e%e7%8e%b0%28%e4%b8%8d%e4%b8%8b%e5%8d%81%e4%b8%aa%29%ef%bc%8c%e8%bf%99%e4%b9%9f%e5%b0%b1%e6%84%8f%e5%91%b3%e7%9d%80%e5%a4%a7%e5%ae%b6%e5%af%b9%20SBT%20%e7%90%86%e5%bf%b5%e6%9c%89%e5%be%88%e5%a4%9a%e4%b8%8d%e5%90%8c%ef%bc%8c%e4%bd%86%e6%9c%80%e7%bb%88%e7%9a%84%e6%a0%87%e5%87%86%e5%8f%aa%e6%9c%89%e6%8c%81%e7%bb%ad%e7%9a%84%e8%ae%a8%e8%ae%ba%e5%92%8c%e5%ae%9e%e8%b7%b5%e5%b9%b6%e7%bb%8f%e8%bf%87%e5%b8%82%e5%9c%ba%e7%9a%84%e9%80%89%e6%8b%a9%e6%89%8d%e8%83%bd%e7%a1%ae%e5%ae%9a%e3%80%82%e6%9c%ac%e6%96%87%e4%bb%8b%e7%bb%8d%e4%b8%89%e4%b8%aa%e6%af%94%e8%be%83%e6%af%94%e8%be%83%e6%9c%89%e6%84%8f%e6%80%9d%e7%9a%84%20SBT%20%e7%9b%b8%e5%85%b3%20EIP%20%e6%a0%87%e5%87%86%ef%bc%8c%e6%ad%a4%e7%b3%bb%e5%88%97%e6%8c%81%e7%bb%ad%e6%9b%b4%e6%96%b0%e3%80%82%0aEIP-4973%3a%20Account-bound%20Tokens%20Account-bound%20Tokens%20%28ABT%29%20%e4%b8%ad%e6%96%87%e5%90%8d%e5%8f%af%e4%bb%a5%e5%8f%ab%e5%81%9a%e8%b4%a6%e5%8f%b7%e7%bb%91%e5%ae%9a%e4%bb%a3%e5%b8%81%ef%bc%8c%e5%8e%9f%e5%9b%a0%e5%a5%bd%e5%83%8f%e6%98%af%e4%bd%9c%e8%80%85%e8%ae%a4%e4%b8%ba%e4%b8%96%e7%95%8c%e5%90%84%e6%b0%91%e6%97%8f%e5%af%b9%e7%81%b5%e9%ad%82%e7%9a%84%e7%90%86%e8%a7%a3%e6%98%af%e4%b8%8d%e4%b8%80%e6%a0%b7%e7%9a%84%ef%bc%8c%e7%94%a8%e8%b4%a6%e6%88%b7%e5%8f%af%e8%83%bd%e6%9b%b4%e5%87%86%e7%a1%ae%e5%92%8c%e4%b8%ad%e7%ab%8b%e4%b8%80%e4%ba%9b%e3%80%82EIP-4973%20%e5%88%9b%e5%bb%ba%e4%ba%8e%202022-04-01%20%ef%bc%8c%e6%97%a9%e4%ba%8e%20Desoc%20%e8%ae%ba%e6%96%87%e5%8f%91%e5%b8%83%e3%80%82%e7%9b%ae%e5%89%8d%20Otterspace%20%e5%92%8c%20violet%20%e5%9c%a8%e4%bd%bf%e7%94%a8%e8%bf%99%e4%b8%aa%e6%a0%87%e5%87%86%e3%80%82%e5%a4%84%e4%ba%8e%20Review%20%e9%98%b6%e6%ae%b5%20%28EIP%20%e7%9a%84%e5%88%9b%e5%bb%ba%e6%b5%81%e7%a8%8b%e5%a4%a7%e8%87%b4%e5%8f%af%e4%bb%a5%e8%a7%86%e4%b8%ba%e5%9b%9b%e4%b8%aa%e9%98%b6%e6%ae%b5%ef%bc%9aDraft%20-%26gt%3b%20Review%20-%26gt%3b%20Last%20Call%20-%26gt%3b%20Final%29%e3%80%82%e4%bb%a3%e5%b8%81%e6%a0%87%e5%87%86%e7%9a%84%e6%80%bb%e7%bb%93%e5%a6%82%e4%b8%8b%ef%bc%9a%0a%20%e5%bf%85%e9%a1%bb%e4%b8%8d%e5%ae%9e%e7%8e%b0%20ERC721%20%e7%9a%84%20transfer%20%e7%9b%b8%e5%85%b3%e7%9a%84%e6%8e%a5%e5%8f%a3%20%e4%bb%a3%e5%b8%81%e6%8c%81%e6%9c%89%e4%ba%ba%e9%9a%8f%e6%97%b6%e9%83%bd%e5%8f%af%e4%bb%a5%e5%b0%86ABT%20%e4%b8%8e%e8%87%aa%e5%b7%b1%e7%9a%84%e5%9c%b0%e5%9d%80%e6%8e%a5%e8%a7%a6%e7%bb%91%e5%ae%9a%ef%bc%9aunequip%20%e5%87%bd%e6%95%b0%20%e5%8f%af%e4%b8%bb%e5%8a%a8%e5%8f%91%e9%80%81%e7%bb%99%e6%8e%a5%e6%94%b6%e6%96%b9%ef%bc%8c%e4%b9%9f%e5%8f%af%e4%bb%a5%e7%94%b1%e6%8e%a5%e6%94%b6%e6%96%b9%e8%87%aa%e4%b8%bb%20mint%20%3a%20give%20%e5%92%8c%20take%20%e5%87%bd%e6%95%b0%20%e6%94%af%e6%8c%81%20ERC721Metadata%20%e6%89%80%e4%bb%a5%e9%92%b1%e5%8c%85%e5%92%8c%e4%ba%a4%e6%98%93%e5%b9%b3%e5%8f%b0%e5%8f%af%e4%bb%a5%e5%a4%8d%e7%94%a8%20NFT%20%e7%9a%84%e5%9f%ba%e7%a1%80%e8%ae%be%e6%96%bd%ef%bc%8c%e8%bd%bb%e6%98%93%e7%9a%84%e5%b1%95%e7%a4%ba%20ABT%20%e6%8e%a5%e5%8f%a3%e6%95%b0%e9%87%8f%e5%be%88%e5%b0%91%e5%85%b3%e9%94%ae%e7%9a%84%e5%87%bd%e6%95%b0%e5%8f%aa%e6%9c%89%e5%88%9a%e5%88%9a%e6%8f%90%e5%88%b0%e7%9a%84%e8%bf%99%e4%b8%89%e4%b8%aa%ef%bc%8c%e4%bf%9d%e6%8c%81%e6%9c%80%e5%a4%a7%e7%9a%84%e5%90%91%e5%90%8e%e5%85%bc%e5%ae%b9%e6%80%a7%20%20EIP-4973%20%e4%bd%9c%e8%80%85%e8%87%aa%e5%b7%b1%e6%a0%b9%e6%8d%ae%e6%a0%87%e5%87%86%e5%ae%9e%e7%8e%b0%e4%ba%86%e4%b8%80%e7%89%88%e5%90%88%e7%ba%a6%0aEIP-5114%3a%20Soulbound%20Badge%20EIP-5114%20%e7%9a%84%e4%b8%80%e4%b8%aa%e5%be%88%e4%b8%8d%e5%90%8c%e7%9a%84%e7%82%b9%e6%98%af%ef%bc%8c%e8%bf%99%e4%b8%aa%e6%a0%87%e5%87%86%e6%98%af%e6%8a%8a%20SBT%20%e7%bb%91%e5%ae%9a%e5%88%b0%20NFT%20%e8%80%8c%e4%b8%8d%e6%98%af%e7%bb%91%e5%ae%9a%e5%88%b0%e5%9c%b0%e5%9d%80%e4%b8%8a%e3%80%82%e4%b9%9f%e5%bc%95%e8%b5%b7%e4%ba%86%e7%a4%be%e5%8c%ba%e6%88%90%e5%91%98%e7%9a%84%e5%be%88%e5%a4%9a%e8%ae%a8%e8%ae%ba%ef%bc%8c%e5%be%88%e5%a4%9a%e4%ba%ba%e8%a7%89%e5%be%97%e6%8a%8a%20SBT%20%e7%bb%91%20NFT%20%e7%9a%84%e9%9c%80%e6%b1%82%e5%a5%bd%e5%83%8f%e4%b8%8d%e6%98%af%e5%be%88%e6%98%8e%e6%98%be%e3%80%82%e4%bd%86%e4%b9%9f%e6%9c%89%e4%ba%ba%e8%a7%89%e5%be%97%e8%bf%98%e6%98%af%e6%8c%ba%e6%9c%89%e6%84%8f%e6%80%9d%ef%bc%88%e5%8c%85%e6%8b%ac%e6%88%91%ef%bc%89%ef%bc%8c%e5%9b%a0%e4%b8%ba%e8%bf%99%e5%85%b6%e5%ae%9e%e7%bb%99%20NFT%20%e5%a2%9e%e5%8a%a0%e4%ba%86%e4%b8%80%e4%ba%9b%e6%96%b0%e7%9a%84%e7%8e%a9%e6%b3%95%ef%bc%8c%e6%af%94%e5%a6%82%e5%85%b7%e6%9c%89%e6%88%90%e9%95%bf%e6%80%a7%e7%9a%84%20NFT%e3%80%82%e8%bf%99%e9%87%8c%e4%b9%9f%e5%b0%b1%e6%8a%9b%e5%87%ba%e4%ba%86%e4%b8%80%e4%b8%aa%e9%87%8d%e8%a6%81%e7%9a%84%e9%97%ae%e9%a2%98%ef%bc%9aSBT%20%e5%88%b0%e5%ba%95%e5%ba%94%e8%af%a5%e7%bb%91%e5%88%b0%e5%95%a5%e4%b8%8a%e9%9d%a2%ef%bc%8c%e7%bb%91%e5%9c%b0%e5%9d%80%e5%bd%93%e7%84%b6%e6%9c%80%e6%96%b9%e4%be%bf%e5%92%8c%e7%9b%b4%e6%8e%a5%ef%bc%8c%e4%bd%86%e6%98%af%e4%b9%9f%e4%bc%9a%e9%9d%a2%e4%b8%b4%e7%a7%81%e9%92%a5%e4%b8%a2%e5%a4%b1%e3%80%81%e6%8d%a2%e5%9c%b0%e5%9d%80%e7%ad%89%e9%97%ae%e9%a2%98%e3%80%82%e4%b8%80%e4%ba%9b%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95%e6%98%af%e7%bb%91%e5%ae%9a%e5%88%b0%20DID%20%e6%88%96%e8%80%85%e4%bd%bf%e7%94%a8%e7%a4%be%e4%ba%a4%e6%81%a2%e5%a4%8d%e7%ad%89%e6%96%b9%e6%b3%95%ef%bc%8c%e8%bf%99%e9%87%8c%e4%b8%8d%e5%b1%95%e5%bc%80%ef%bc%8c%e5%90%8e%e9%9d%a2%e5%8f%a6%e5%bc%80%e6%96%87%e7%ab%a0%e8%ae%a8%e8%ae%ba%e3%80%82%e5%9b%9e%e5%88%b0%20EIP-5114%20%ef%bc%8c%e6%ad%a4%e6%a0%87%e5%87%86%e5%88%9b%e5%bb%ba%e4%ba%8e%202022-05-30%20%e7%9b%ae%e5%89%8d%e4%be%9d%e7%84%b6%e6%98%af%20Draft%20%e9%98%b6%e6%ae%b5%ef%bc%8c%e6%80%bb%e4%bb%b7%e5%a6%82%e4%b8%8b%ef%bc%9a">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftingfei.space%2fposts%2fsbt_standards_1%2f&t=SBT%20%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86%e4%bb%8b%e7%bb%8d%e3%80%90%e4%b8%80%e3%80%91">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Fat Blog 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+
+
+</html>
