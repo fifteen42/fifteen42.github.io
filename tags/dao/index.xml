@@ -6,7 +6,20 @@
     <description>Recent content in DAO on Fat Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Jul 2022 23:51:08 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/dao/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Apr 2023 23:48:29 +0800</lastBuildDate><atom:link href="https://tingfei.space/tags/dao/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DAO 是游戏</title>
+      <link>https://tingfei.space/posts/dao_is_game/</link>
+      <pubDate>Wed, 05 Apr 2023 23:48:29 +0800</pubDate>
+      
+      <guid>https://tingfei.space/posts/dao_is_game/</guid>
+      <description>本文由作者与 ChatGPT 共同完成
+ 关于 “DAO 是什么” 的讨论几乎贯穿了整个区块链发展史。有人认为 DAO 是新的生产组织形态将取代公司，但 DAO 的效率却一直被诟病；有人认为 DAO 是用来消费的，你可以通过 DAO 买一支 NBA 球队，管理一个博物馆，制作一部电影； 有人认为 DAO 是 Web3 社交的未来，因为行业内大多数的真实社交发生在 DAO 中。DAO 可以是太多东西，这恰恰是 DAO 的魅力。
+DAO 也可以是一种游戏。一种开放的，有无限探索可能的多人在线游戏。DAO 不应该是一个让我们感觉像在工作的地方，而应该是一个让我们在其中寻找乐趣、寻找伙伴的地方。在这里每个玩家既是游戏规则的设定者，也是游戏规则的挑战者，这是一个架空的世界。
+对于 DAO 来说，游戏化意味着将趣味性、实时反馈与治理结合起来。可以让玩家在轻松愉快的环境中了解和掌握DAO的运作原理。这样一来，无论新手还是资深用户，都会更愿意投入时间和精力探索DAO生态。游戏化也可以为DAO创造更多样化的激励机制，包括虚拟奖励、成就系统等。这将进一步鼓励用户积极参与治理，并为这个架空的世界作出贡献并获得汇报和快乐，而不是延续传统公司的上班打卡状态。
+但一个比较成熟的 DAO 来进行游戏化不是那么容易的事情，需要考虑的事情以及背后的工作量都不容小觑。熟悉 SeeDAO 的朋友一定知道 SeeDAO 今年的一个重要话题就是 DAO 的游戏化，刚好最近 SeeDAO 发起了 100 美元 ChatGPT 赚钱挑战赛，我也报名了，因为前几天我自己发起的24小时AI创业实验其实没过瘾，24 小时实在不够做太多事情，但这是比赛时间是一个月，所以我想利用这次机会从零到一用 AI 去设计并实现一款游戏，并且这款游戏同时也会是一个 DAO。游戏的名字我已经想好了就叫做 《DAO IS GAME》域名是 daoisga.me，接下来一个月我和会各种 AI 助手一起完成这个游戏，并以此探索 DAO 的游戏化。欢迎围观。</description>
+    </item>
+    
     <item>
       <title>我为什么选择做一个 DAO 而不是一个项目？</title>
       <link>https://tingfei.space/posts/souldao/</link>
